@@ -1,13 +1,10 @@
-import express, { Express, Request, Response } from 'express';
-
+import express, { Express } from 'express';
+import routes from './src/routes';
 
 const app: Express = express();
 const port = 8000;
 
-app.get('/', (_: Request, res: Response) => {
-    res.send('TS working');
-});
-
+app.use('/api', routes);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
