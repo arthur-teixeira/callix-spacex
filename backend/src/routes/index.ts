@@ -1,16 +1,12 @@
-import { Request, Response, Router } from "express";
-import HttpClient from "../core/HttpClient";
+import { Router } from "express";
+import buildController from "../core/buildController";
+import { getLaunchesController } from "../factories/ControllersFactory";
 
 const router = Router();
-const httpClient = new HttpClient();
 
-router.get('/launches', async (_: Request, res: Response) => {
-    try {
-        const launches = await httpClient.get('launches');
-        res.json(launches);
-    } catch (error: any) {
-        res.status(400).send(error);
-    }
-});
+router.get('/past', buildController(getLaunchesController, 'getPastLaunches'));
+router.get('/next', buildController(getLaunchesController, 'getNextLaunch'));
+router.get('/previous', buildController(getLaunchesController, 'getPreviousLaunch'));
+router.get('/upcoming', buildController(getLaunchesController, 'getUpcomingLaunches'));
 
 export default router;
