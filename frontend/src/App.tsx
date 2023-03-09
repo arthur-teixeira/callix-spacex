@@ -1,21 +1,19 @@
+import Navbar from "./components/Navbar";
+import { QueryClient, QueryClientProvider } from "react-query";
+import routes from './routes';
+import { RouterProvider } from "react-router-dom";
+
+const queryClient = new QueryClient();
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <div className="App">
+                <Navbar />
+                <RouterProvider router={routes} />
+            </div>
+        </QueryClientProvider>
+    );
 }
 
 export default App;
