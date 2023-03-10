@@ -1,12 +1,13 @@
-import { createBrowserRouter } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
+import NavBar from "./components/Navbar";
 import NextLaunch from "./pages/NextLaunch";
 
-const routes = [
+const routes: RouteObject[] = [
     {
         path: 'next',
         element: <NextLaunch />,
     }
 ];
 
-export default createBrowserRouter(routes);
+export default routes;
 
