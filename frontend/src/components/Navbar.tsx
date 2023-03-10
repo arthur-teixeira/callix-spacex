@@ -11,9 +11,9 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/next">Próximos lançamentos</Nav.Link>
-                        <Nav.Link as={Link} to="/previous">Lançamentos passados</Nav.Link>
-                        <Nav.Link as={Link} to="/latest">Último lançamento</Nav.Link>
+                        <Nav.Link as={Link} to="/next">Próximo lançamento</Nav.Link>
+                        <Nav.Link as={Link} to="/past">Lançamentos passados</Nav.Link>
+                        <Nav.Link as={Link} to="/previous">Último lançamento</Nav.Link>
                         <Nav.Link as={Link} to="/upcoming">Próximos lançamentos</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
