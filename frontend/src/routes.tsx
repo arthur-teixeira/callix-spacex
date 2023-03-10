@@ -1,4 +1,5 @@
 import { RouteObject } from "react-router-dom";
+import Redirect from "./components/Redirect";
 import NextLaunch from "./pages/NextLaunch";
 import PastLaunches from "./pages/PastLaunches";
 import PreviousLaunch from "./pages/PreviousLaunch";
@@ -17,6 +18,9 @@ const routes: RouteObject[] = [
     }, {
         path: 'next',
         element: <NextLaunch />,
+    }, {
+        path: '/',
+        element: <Redirect to='next' />,
     }
 ];
 
