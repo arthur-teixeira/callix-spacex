@@ -1,24 +1,23 @@
 import useFetchNextLaunch from "../hooks/useFetchNextLaunch";
+import pageWithNavbar from "../services/pageWithNavbar";
 
 const NextLaunch = () => {
-  const { 
-      isLoading,
-      isError,
-      error,
-      data
-  } = useFetchNextLaunch();
+    const {
+        isLoading,
+        isError,
+        error,
+        data
+    } = useFetchNextLaunch();
 
-  if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div>Loading...</div>
 
-  if (isError) return <div>An error {(error as any)?.message} has occurred</div>
+    if (isError) return <div>An error {(error as any)?.message} has occurred</div>
 
-  console.log(data);
-
-  return (
-    <pre>
-        {JSON.stringify(data)}
-    </pre>
-  )
+    return (
+        <pre>
+            {JSON.stringify(data)}
+        </pre>
+    )
 }
 
-export default NextLaunch;
+export default pageWithNavbar(NextLaunch);
