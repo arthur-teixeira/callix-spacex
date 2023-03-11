@@ -5,7 +5,7 @@ type LaunchCardGridProps = {
     launches: Launch[];
 }
 
-const LaunchCardGrid = ({ launches }: LaunchCardGridProps) => {
+const LaunchCardList = ({ launches }: LaunchCardGridProps) => {
   return (
     <> 
         {launches.map((launch) => (
@@ -15,4 +15,4 @@ const LaunchCardGrid = ({ launches }: LaunchCardGridProps) => {
   )
 }
 
-export default LaunchCardGrid
+export default LaunchCardList
