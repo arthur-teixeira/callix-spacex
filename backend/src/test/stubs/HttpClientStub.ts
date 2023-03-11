@@ -1,4 +1,4 @@
-import IHttpClient from "../../../interfaces/IHttpClient";
+import IHttpClient from "../../interfaces/IHttpClient";
 
 export default class HttpClientStub implements IHttpClient {
     private requests: string[] = [];
