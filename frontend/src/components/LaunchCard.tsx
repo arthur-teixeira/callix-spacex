@@ -3,13 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 type LaunchCardProps = {
-    launch: Launch;
+    launch?: Launch;
 };
 
 const LaunchCard = ({ launch }: LaunchCardProps) => {
     const handleExternalRedirect = (link: string) => {
         window.open(link, '_blank');
     };
+
+    if (!launch) return <></>;
 
     const handleYoutubeRedirect = () => {
         handleExternalRedirect(launch.links.webcast);
@@ -19,13 +21,13 @@ const LaunchCard = ({ launch }: LaunchCardProps) => {
         handleExternalRedirect(launch.links.article);
     };
 
-    const patchSrc = launch.links.patch.large || launch.links.patch.small;
+    const patchSrc = launch.links.patch?.large || launch.links.patch?.small;
 
     return (
         <Card className="my-3 flex-row flex-wrap">
             {patchSrc && (
                 <Card.Header className="border-0">
-                    <Card.Img src={launch.links.patch.large} style={{ width: '8rem' }} />
+                    <Card.Img src={patchSrc} style={{ width: '8rem' }} />
                 </Card.Header>
             )}
             <Card.Body className="px-2 w-75">

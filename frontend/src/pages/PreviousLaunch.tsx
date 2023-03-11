@@ -20,9 +20,9 @@ const PreviousLaunch = () => {
     return (
         <Container className="my-5">
             <h1 className="my-5">Último lançamento</h1>
-            <LaunchCard launch={data!} />
+            <LaunchCard launch={data} />
         </Container>
     )
-}  
+}
 
 export default pageWithNavbar(PreviousLaunch); 

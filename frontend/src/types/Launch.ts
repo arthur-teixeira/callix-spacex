@@ -11,7 +11,7 @@ export type FlickrLinks = {
 }
 
 export type LaunchLinks = {
-    patch: {
+    patch?: {
         small?: string;
         large?: string;
     };
