@@ -1,3 +1,5 @@
+import { Container } from "react-bootstrap";
+import LaunchCardList from "../components/LaunchCardList";
 import useFetchUpcomingLaunches from "../hooks/useFetchUpcomingLaunches";
 import pageWithNavbar from "../services/pageWithNavbar";
 
@@ -14,9 +16,9 @@ const UpcomingLaunches = () => {
     if (isError) return <div>An error {(error as any)?.message} has occurred</div>
 
     return (
-        <pre>
-            {JSON.stringify(data)}
-        </pre>
+        <Container>
+            <LaunchCardList launches={data!} />
+        </Container>
     )
 }
 

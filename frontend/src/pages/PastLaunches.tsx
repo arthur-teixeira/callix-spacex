@@ -1,4 +1,6 @@
-import useFetchUpcomingLaunches from "../hooks/useFetchUpcomingLaunches";
+import { Container } from "react-bootstrap";
+import LaunchCardList from "../components/LaunchCardList";
+import useFetchPastLaunches from "../hooks/useFetchPastLaunches";
 import pageWithNavbar from "../services/pageWithNavbar";
 
 const PastLaunches = () => {
@@ -7,16 +9,16 @@ const PastLaunches = () => {
         isError,
         error,
         data
-    } = useFetchUpcomingLaunches();
+    } = useFetchPastLaunches();
 
     if (isLoading) return <div>Loading...</div>
 
     if (isError) return <div>An error {(error as any)?.message} has occurred</div>
 
     return (
-        <pre>
-            {JSON.stringify(data)}
-        </pre>
+        <Container className="my-5">
+           <LaunchCardList launches={data!} /> 
+        </Container>
     )
 }
 

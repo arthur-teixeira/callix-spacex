@@ -1,3 +1,5 @@
+import { Container } from "react-bootstrap";
+import LaunchCard from "../components/LaunchCard";
 import useFetchNextLaunch from "../hooks/useFetchNextLaunch";
 import pageWithNavbar from "../services/pageWithNavbar";
 
@@ -14,9 +16,9 @@ const NextLaunch = () => {
     if (isError) return <div>An error {(error as any)?.message} has occurred</div>
 
     return (
-        <pre>
-            {JSON.stringify(data)}
-        </pre>
+        <Container className="my-5">
+            <LaunchCard launch={data!} />
+        </Container>
     )
 }
 
