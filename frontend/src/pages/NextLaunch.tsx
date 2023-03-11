@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import ErrorAlert from "../components/ErrorAlert";
 import LaunchCard from "../components/LaunchCard";
+import LoadingPage from "../components/LoadingPage";
 import useFetchNextLaunch from "../hooks/useFetchNextLaunch";
 import pageWithNavbar from "../services/pageWithNavbar";
 
@@ -12,7 +13,7 @@ const NextLaunch = () => {
         data
     } = useFetchNextLaunch();
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <LoadingPage />
 
     if (isError) return <ErrorAlert message={(error as any)?.message} />
 
