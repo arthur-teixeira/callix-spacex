@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from "express";
-import HttpClient from "../core/HttpClient";
+import IHttpClient from "../interfaces/IHttpClient";
 import { Launch } from "../types/Launch";
 
 export default class LaunchesController {
 
-    private httpClient: HttpClient
+    private httpClient: IHttpClient;
 
-    constructor(httpClient: HttpClient) {
+    constructor(httpClient: IHttpClient) {
         this.httpClient = httpClient;
     };
 

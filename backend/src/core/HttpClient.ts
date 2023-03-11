@@ -1,6 +1,7 @@
 import axios from 'axios';
+import IHttpClient from '../interfaces/IHttpClient';
 
-export default class HttpClient {
+export default class HttpClient implements IHttpClient {
     private instance = axios.create({
         baseURL: process.env.SPACEX_URL,
     });
