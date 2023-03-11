@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import ErrorAlert from "../components/ErrorAlert";
 import LaunchCardList from "../components/LaunchCardList";
 import useFetchUpcomingLaunches from "../hooks/useFetchUpcomingLaunches";
 import pageWithNavbar from "../services/pageWithNavbar";
@@ -13,7 +14,7 @@ const UpcomingLaunches = () => {
 
     if (isLoading) return <div>Loading...</div>
 
-    if (isError) return <div>An error {(error as any)?.message} has occurred</div>
+    if (isError) return <ErrorAlert message={(error as any)?.message} />
 
     return (
         <Container className="my-3">

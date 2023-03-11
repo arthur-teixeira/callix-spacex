@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import ErrorAlert from "../components/ErrorAlert";
 import LaunchCard from "../components/LaunchCard";
 import useFetchPreviousLaunch from "../hooks/useFetchPreviousLaunch";
 import pageWithNavbar from "../services/pageWithNavbar";
@@ -13,7 +14,7 @@ const PreviousLaunch = () => {
 
     if (isLoading) return <div>Loading...</div>
 
-    if (isError) return <div>An error {(error as any)?.message} has occurred</div>
+    if (isError) return <ErrorAlert message={(error as any)?.message} />
 
     return (
         <Container className="my-5">
