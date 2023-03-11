@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class AxiosService {
     private instance = axios.create({
-        baseURL: 'http://localhost:8000',
+        baseURL: process.env.BACKEND_URL,
     });
 
     async get<T>(route: string): Promise<T> {
