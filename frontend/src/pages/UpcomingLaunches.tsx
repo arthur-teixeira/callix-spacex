@@ -16,7 +16,8 @@ const UpcomingLaunches = () => {
     if (isError) return <div>An error {(error as any)?.message} has occurred</div>
 
     return (
-        <Container>
+        <Container className="my-3">
+            <h1 className="my-5">Próximos lançamentos</h1>
             <LaunchCardList launches={data!} />
         </Container>
     )

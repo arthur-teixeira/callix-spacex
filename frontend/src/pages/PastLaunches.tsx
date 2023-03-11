@@ -17,6 +17,7 @@ const PastLaunches = () => {
 
     return (
         <Container className="my-5">
+            <h1 className="my-5">Últimos lançamentos</h1>
            <LaunchCardList launches={data!} /> 
         </Container>
     )
