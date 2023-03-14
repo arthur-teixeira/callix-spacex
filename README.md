@@ -42,3 +42,8 @@ Editar a linha do localhost da seguinte maneira:
 Com isso feito, agora é possível rodar a aplicação normalmente e acessá-la
 pela url localhost.com:3000.
 Em uma versão, a barra de navegação é preta, e na outra, ela é branca.
+
+A aplicação também está integrada com o Hotjar. Como é necessário pedir acesso para
+ver o painel no site do Hotjar, adicionei um Heatmap e uma pesquisa de satisfação
+exportados de lá na pasta /hotjar. Também fiz upload de uma sessão gravada [nesse link](https://youtu.be/h9iOUMthIpM)
+
